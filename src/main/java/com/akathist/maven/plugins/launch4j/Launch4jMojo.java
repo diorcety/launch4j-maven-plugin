@@ -625,11 +625,7 @@ public class Launch4jMojo extends AbstractMojo {
         if (os.startsWith("Windows")) {
             plat = "win32";
         } else if ("Linux".equals(os)) {
-            if ("amd64".equals(arch)) {
-                plat = "linux64";
-            } else {
-                plat = "linux";
-            }
+            plat = "linux";
         } else if ("Solaris".equals(os) || "SunOS".equals(os)) {
             plat = "solaris";
         } else if ("Mac OS X".equals(os) || "Darwin".equals(os)) {
