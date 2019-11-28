@@ -623,12 +623,16 @@ public class Launch4jMojo extends AbstractMojo {
         // See here for possible values of os.name:
         // http://lopica.sourceforge.net/os.html
         if (os.startsWith("Windows")) {
-            plat = "win32";
+            if ("amd64".equals(arch)) {
+                plat = "win64";
+            } else {
+                plat = "win32";
+            }
         } else if ("Linux".equals(os)) {
             if ("amd64".equals(arch)) {
                 plat = "linux64";
             } else {
-                plat = "linux";
+                plat = "linux32";
             }
         } else if ("Solaris".equals(os) || "SunOS".equals(os)) {
             plat = "solaris";
